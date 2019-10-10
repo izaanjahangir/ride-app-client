@@ -1,10 +1,7 @@
 import React from "react";
-import { Text, View } from "react-native";
+
+import Navigation from "./navigation";
 
 export default function App() {
-  return (
-    <View>
-      <Text>Ride app</Text>
-    </View>
-  );
+  return <Navigation />;
 }

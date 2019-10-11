@@ -27,7 +27,7 @@ class Login extends Component {
           <Text style={styles.belowHeadingText}>Login to ride with us</Text>
         </View>
         <ImageBackground
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "100%", flex: 1 }}
           source={require("../../assets/images/bubbles.png")}
         >
           <View style={styles.container}>
@@ -46,6 +46,11 @@ class Login extends Component {
                 }
               />
               <Button loading={false} title="Login" />
+            </View>
+            <View style={styles.belowForm}>
+              <Text style={styles.registerText}>
+                Don't have an account? Register
+              </Text>
             </View>
           </View>
         </ImageBackground>

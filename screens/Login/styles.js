@@ -13,7 +13,7 @@ export default StyleSheet.create({
     backgroundColor: colors.primary,
     borderTopLeftRadius: constants.borderRadius,
     borderTopRightRadius: constants.borderRadius,
-    padding: constants.paddingLarge,
+    paddingHorizontal: constants.paddingLarge,
     opacity: 0.88
   },
   belowHeadingText: {
@@ -23,6 +23,17 @@ export default StyleSheet.create({
   form: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    borderRadius: constants.borderRadius,
+    marginBottom: 10
+  },
+  belowForm: {
+    marginVertical: constants.marginExtraSmall * 1.3
+  },
+  registerText: {
+    textAlign: "center",
+    fontSize: constants.fontMedium * 0.8,
+    fontFamily: "Montserrat-Medium",
+    color: "white"
   }
 });

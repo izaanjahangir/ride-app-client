@@ -12,7 +12,6 @@ export default StyleSheet.create({
   },
   buttonStyles: {
     width: "100%",
-    textAlign: "center",
     backgroundColor: colors.secondary,
     height: constants.windowHeight * 0.06,
     borderRadius: constants.borderRadius

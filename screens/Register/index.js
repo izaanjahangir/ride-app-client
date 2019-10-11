@@ -7,10 +7,14 @@ import GeneralStyles from "../GeneralStyles";
 import styles from "./styles";
 import colors from "../../config/colors";
 
-class Login extends Component {
+class Register extends Component {
   state = {
+    username: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    password: ""
+    password: "",
+    confirmPassword: ""
   };
 
   handleTextChange = (key, value) => {
@@ -18,13 +22,20 @@ class Login extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    const {
+      username,
+      firstName,
+      lastName,
+      email,
+      password,
+      confirmPassword
+    } = this.state;
 
     return (
       <View style={[GeneralStyles.container, GeneralStyles.smallMarginTop]}>
         <View style={styles.welcomeContainer}>
           <Text style={GeneralStyles.mainHeading}>Welcome</Text>
-          <Text style={styles.belowHeadingText}>Login to ride with us</Text>
+          <Text style={styles.belowHeadingText}>Register to ride with us</Text>
         </View>
         <ImageBackground
           style={{ width: "100%", flex: 1 }}
@@ -32,6 +43,27 @@ class Login extends Component {
         >
           <View style={styles.container}>
             <View style={styles.form}>
+              <Input
+                placeholder="Enter username"
+                value={username}
+                onChange={username =>
+                  this.handleTextChange("username", username)
+                }
+              />
+              <Input
+                placeholder="Enter first Name"
+                value={firstName}
+                onChange={firstName =>
+                  this.handleTextChange("firstName", firstName)
+                }
+              />
+              <Input
+                placeholder="Enter last Name"
+                value={lastName}
+                onChange={lastName =>
+                  this.handleTextChange("lastName", lastName)
+                }
+              />
               <Input
                 placeholder="Enter email address"
                 value={email}
@@ -45,15 +77,21 @@ class Login extends Component {
                   this.handleTextChange("password", password)
                 }
               />
-              <Button loading={false} title="Login" />
+              <Input
+                placeholder="Confirm password"
+                secureTextEntry={true}
+                value={confirmPassword}
+                onChange={confirmPassword =>
+                  this.handleTextChange("confirmPassword", confirmPassword)
+                }
+              />
+              <Button loading={false} title="Register" />
             </View>
             <View style={styles.belowForm}>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("Register")}
+                onPress={() => this.props.navigation.navigate("Login")}
               >
-                <Text style={styles.registerText}>
-                  Don't have an account? Register
-                </Text>
+                <Text style={styles.loginText}>Already a member? Login</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -63,4 +101,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;

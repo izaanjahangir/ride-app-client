@@ -1,6 +1,7 @@
 import { createStackNavigator } from "react-navigation-stack";
 
 import Login from "../screens/Login";
+import Register from "../screens/Register";
 
 const options = {
   headerMode: "none"
@@ -8,7 +9,8 @@ const options = {
 
 const Navigation = createStackNavigator(
   {
-    Login
+    Login,
+    Register
   },
   options
 );

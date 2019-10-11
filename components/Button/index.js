@@ -5,6 +5,7 @@ import styles from "./styles";
 
 const Button = props => (
   <ElementButton
+    onPress={props.onPress}
     containerStyle={[styles.containerStyles, props.containerStyles]}
     buttonStyle={[styles.buttonStyles, props.buttonStyles]}
     titleStyle={[styles.titleStyles, props.titleStyles]}

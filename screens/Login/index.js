@@ -17,6 +17,10 @@ class Login extends Component {
     this.setState({ [key]: value });
   };
 
+  login = () => {
+    this.props.navigation.navigate("Main");
+  };
+
   render() {
     const { email, password } = this.state;
 
@@ -45,7 +49,7 @@ class Login extends Component {
                   this.handleTextChange("password", password)
                 }
               />
-              <Button loading={false} title="Login" />
+              <Button onPress={this.login} loading={false} title="Login" />
             </View>
             <View style={styles.belowForm}>
               <TouchableOpacity

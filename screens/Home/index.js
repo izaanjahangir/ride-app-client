@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 import { View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import MapView from "react-native-maps";
 
 import Search from "../../components/Search";
 import GeneralStyles from "../GeneralStyles";
 import styles from "./styles";
 class Home extends Component {
   state = {
-    search: ""
+    search: "",
+    region: {
+      latitude: 24.8916996,
+      longitude: 67.2046189,
+      latitudeDelta: 0.0043,
+      longitudeDelta: 0.0034
+    }
   };
 
   handleTextChange = (key, value) => {
@@ -15,7 +22,7 @@ class Home extends Component {
   };
 
   render() {
-    const { search } = this.state;
+    const { search, region } = this.state;
 
     return (
       <View style={[GeneralStyles.smallMarginTop, styles.container]}>
@@ -30,7 +37,9 @@ class Home extends Component {
             />
           </View>
         </View>
-        <View style={styles.contentContainer}></View>
+        <View style={styles.contentContainer}>
+          <MapView region={region} style={styles.mapView} />
+        </View>
       </View>
     );
   }

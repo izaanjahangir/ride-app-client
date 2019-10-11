@@ -26,6 +26,10 @@ export default StyleSheet.create({
     borderTopLeftRadius: constants.borderRadius,
     borderTopRightRadius: constants.borderRadius,
     backgroundColor: colors.white,
-    marginTop: -constants.windowHeight * 0.04
+    marginTop: -constants.windowHeight * 0.04,
+    overflow: "hidden"
+  },
+  mapView: {
+    flex: 1,
   }
 });

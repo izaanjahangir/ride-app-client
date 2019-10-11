@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, ImageBackground } from "react-native";
 
 import Input from "../../components/Input";
 import Button from "../../components/Button";
@@ -26,22 +26,29 @@ class Login extends Component {
           <Text style={GeneralStyles.mainHeading}>Welcome</Text>
           <Text style={styles.belowHeadingText}>Login to ride with us</Text>
         </View>
-        <View style={styles.container}>
-          <View style={styles.form}>
-            <Input
-              placeholder="Enter email address"
-              value={email}
-              onChange={email => this.handleTextChange("email", email)}
-            />
-            <Input
-              placeholder="Enter password"
-              secureTextEntry={true}
-              value={password}
-              onChange={password => this.handleTextChange("password", password)}
-            />
-            <Button loading={false} title="Login" />
+        <ImageBackground
+          style={{ width: "100%", height: "100%" }}
+          source={require("../../assets/images/bubbles.png")}
+        >
+          <View style={styles.container}>
+            <View style={styles.form}>
+              <Input
+                placeholder="Enter email address"
+                value={email}
+                onChange={email => this.handleTextChange("email", email)}
+              />
+              <Input
+                placeholder="Enter password"
+                secureTextEntry={true}
+                value={password}
+                onChange={password =>
+                  this.handleTextChange("password", password)
+                }
+              />
+              <Button loading={false} title="Login" />
+            </View>
           </View>
-        </View>
+        </ImageBackground>
       </View>
     );
   }

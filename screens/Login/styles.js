@@ -13,7 +13,8 @@ export default StyleSheet.create({
     backgroundColor: colors.primary,
     borderTopLeftRadius: constants.borderRadius,
     borderTopRightRadius: constants.borderRadius,
-    padding: constants.paddingLarge
+    padding: constants.paddingLarge,
+    opacity: 0.88
   },
   belowHeadingText: {
     color: colors.primary,
